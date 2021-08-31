@@ -14,6 +14,8 @@
 		ED7DEF9826DDA43E00DAE6BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7DEF9726DDA43E00DAE6BF /* Assets.xcassets */; };
 		ED7DEF9B26DDA43E00DAE6BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7DEF9926DDA43E00DAE6BF /* LaunchScreen.storyboard */; };
 		ED7DEFA426DDA4A100DAE6BF /* CombineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA326DDA4A100DAE6BF /* CombineVC.swift */; };
+		ED7DEFA726DDB68700DAE6BF /* CombineCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA626DDB68700DAE6BF /* CombineCardView.swift */; };
+		ED7DEFAA26DDB97200DAE6BF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA926DDB97200DAE6BF /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		ED7DEF9A26DDA43E00DAE6BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED7DEF9C26DDA43E00DAE6BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7DEFA326DDA4A100DAE6BF /* CombineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineVC.swift; sourceTree = "<group>"; };
+		ED7DEFA626DDB68700DAE6BF /* CombineCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCardView.swift; sourceTree = "<group>"; };
+		ED7DEFA926DDB97200DAE6BF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		ED7DEF8D26DDA43B00DAE6BF /* tinder_clone */ = {
 			isa = PBXGroup;
 			children = (
+				ED7DEFA826DDB95A00DAE6BF /* Lib */,
+				ED7DEFA526DDB1E500DAE6BF /* View */,
 				ED7DEFA226DDA46600DAE6BF /* Controller */,
 				ED7DEF8E26DDA43B00DAE6BF /* AppDelegate.swift */,
 				ED7DEF9026DDA43B00DAE6BF /* SceneDelegate.swift */,
@@ -76,6 +82,22 @@
 				ED7DEFA326DDA4A100DAE6BF /* CombineVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		ED7DEFA526DDB1E500DAE6BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED7DEFA626DDB68700DAE6BF /* CombineCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED7DEFA826DDB95A00DAE6BF /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				ED7DEFA926DDB97200DAE6BF /* UIView.swift */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +172,9 @@
 			files = (
 				ED7DEFA426DDA4A100DAE6BF /* CombineVC.swift in Sources */,
 				ED7DEF9326DDA43B00DAE6BF /* ViewController.swift in Sources */,
+				ED7DEFA726DDB68700DAE6BF /* CombineCardView.swift in Sources */,
 				ED7DEF8F26DDA43B00DAE6BF /* AppDelegate.swift in Sources */,
+				ED7DEFAA26DDB97200DAE6BF /* UIView.swift in Sources */,
 				ED7DEF9126DDA43B00DAE6BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

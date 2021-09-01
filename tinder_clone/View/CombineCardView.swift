@@ -16,6 +16,8 @@ class CombineCardView: UIView {
         imageView.clipsToBounds = true
         return imageView
     }()
+    let nomeLabel:UILabel = .textBolLabel(32, textColor: .white)
+    let idadeLabel:UILabel = .textLabel(32, textColor: .white)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,8 +27,21 @@ class CombineCardView: UIView {
         layer.cornerRadius = 8
         clipsToBounds = true
         
+        nomeLabel.text = "Ana Laura"
+        idadeLabel.text = "20"
+        nomeLabel.adicionaShandow()
+        idadeLabel.adicionaShandow()
         addSubview(fotoImageView)
         fotoImageView.preencherSuperview()
+        
+        let stackView = UIStackView (arrangedSubviews: [nomeLabel, idadeLabel, UIView()])
+        stackView.spacing = 12
+        addSubview(stackView)
+        stackView.preencher(top: nil,
+                            leading: leadingAnchor,
+                            trailing: trailingAnchor,
+                            bottom: bottomAnchor,
+                            padding: .init(top: 0, left: 16, bottom: 16, right: 16))
     }
     
     required init?(coder: NSCoder) {

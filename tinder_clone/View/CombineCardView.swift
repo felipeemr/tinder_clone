@@ -22,16 +22,14 @@ class CombineCardView: UIView {
     }
 
     
-    let fotoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "pessoa-1")
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        return imageView
-    }()
+    let fotoImageView: UIImageView = .fotoImageView()
+    let deslikeImageView:UIImageView = .iconCard(named: "card-deslike")
+    let likeImageView:UIImageView = .iconCard(named: "card-like")
+    
     let nomeLabel:UILabel = .textBolLabel(32, textColor: .white)
     let idadeLabel:UILabel = .textLabel(28, textColor: .white)
     let fraseLabel:UILabel = .textLabel(16, textColor: .white, numberOfLines: 2)
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,9 +39,6 @@ class CombineCardView: UIView {
         layer.cornerRadius = 8
         clipsToBounds = true
         
-        nomeLabel.text = "Ana Laura"
-        idadeLabel.text = "20"
-        fraseLabel.text = "O ultimo a dar match chamada"
         
         nomeLabel.adicionaShandow()
         idadeLabel.adicionaShandow()
@@ -51,6 +46,23 @@ class CombineCardView: UIView {
         
         
         addSubview(fotoImageView)
+        addSubview(deslikeImageView)
+        deslikeImageView.preencher(
+            top: topAnchor,
+            leading: nil,
+            trailing: trailingAnchor,
+            bottom: nil,
+            padding: .init(top: 20, left: 0, bottom: 0, right: 20)
+        )
+        addSubview(likeImageView)
+        likeImageView.preencher(
+            top: topAnchor,
+            leading: leadingAnchor,
+            trailing: nil,
+            bottom: nil,
+            padding: .init(top: 20, left: 20, bottom: 0, right: 0)
+        )
+        
         fotoImageView.preencherSuperview()
         
         let nomeIdadestackView = UIStackView (arrangedSubviews: [nomeLabel, idadeLabel, UIView()])

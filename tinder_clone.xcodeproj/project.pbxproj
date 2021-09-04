@@ -17,6 +17,7 @@
 		ED7DEFA726DDB68700DAE6BF /* CombineCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA626DDB68700DAE6BF /* CombineCardView.swift */; };
 		ED7DEFAA26DDB97200DAE6BF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA926DDB97200DAE6BF /* UIView.swift */; };
 		EDAD05C826E2ED85008BA650 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD05C726E2ED85008BA650 /* UIImageView.swift */; };
+		EDAD05CA26E2FCEB008BA650 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD05C926E2FCEB008BA650 /* UIButton.swift */; };
 		EDDD63C126DEF9E6006037A4 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C026DEF9E6006037A4 /* UILabel.swift */; };
 		EDDD63C426DF0350006037A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C326DF0350006037A4 /* Usuario.swift */; };
 		EDDD63C926DF0A48006037A4 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C826DF0A47006037A4 /* UsuarioService.swift */; };
@@ -35,6 +36,7 @@
 		ED7DEFA626DDB68700DAE6BF /* CombineCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCardView.swift; sourceTree = "<group>"; };
 		ED7DEFA926DDB97200DAE6BF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EDAD05C726E2ED85008BA650 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		EDAD05C926E2FCEB008BA650 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		EDDD63C026DEF9E6006037A4 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		EDDD63C326DF0350006037A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		EDDD63C826DF0A47006037A4 /* UsuarioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsuarioService.swift; path = ../../../../Downloads/UsuarioService.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				ED7DEFA926DDB97200DAE6BF /* UIView.swift */,
 				EDDD63C026DEF9E6006037A4 /* UILabel.swift */,
 				EDAD05C726E2ED85008BA650 /* UIImageView.swift */,
+				EDAD05C926E2FCEB008BA650 /* UIButton.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				ED7DEFA726DDB68700DAE6BF /* CombineCardView.swift in Sources */,
 				EDAD05C826E2ED85008BA650 /* UIImageView.swift in Sources */,
 				ED7DEF8F26DDA43B00DAE6BF /* AppDelegate.swift in Sources */,
+				EDAD05CA26E2FCEB008BA650 /* UIButton.swift in Sources */,
 				ED7DEFAA26DDB97200DAE6BF /* UIView.swift in Sources */,
 				ED7DEF9126DDA43B00DAE6BF /* SceneDelegate.swift in Sources */,
 			);

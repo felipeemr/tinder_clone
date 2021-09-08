@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MatchVC: UIViewController {
+class MatchVC: UIViewController, UITextFieldDelegate {
     
     var usuario: Usuario? {
         didSet{
@@ -76,7 +76,7 @@ class MatchVC: UIViewController {
         
         fotoImageView.layer.addSublayer(gradient)
         
-        
+        mensagemTxt.delegate = self
         mensagemLabel.textAlignment = .center
         
         voltarButton.addTarget(self, action: #selector(voltarClique), for: .touchUpInside)
@@ -92,6 +92,7 @@ class MatchVC: UIViewController {
             bottom: mensagemTxt.bottomAnchor,
             padding: .init(top: 0, left: 0, bottom: 0, right: 16)
         )
+        mensagemEnviaButton.addTarget(self, action: #selector(enviarMensagem), for: .touchUpInside)
         
         let stackView = UIStackView(arrangedSubviews: [likeImageView, mensagemLabel, mensagemTxt, voltarButton])
         stackView.axis = .vertical
@@ -110,11 +111,22 @@ class MatchVC: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.enviarMensagem()
+        
+        return true
+    }
     
     @objc func voltarClique() {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func enviarMensagem (){
+        if let mensagem = self.mensagemTxt.text{
+            print(mensagem)
+        }
+        
+    }
     
     @objc func keyBoardShow (notification: NSNotification){
         if let keyboardSyze = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -122,10 +134,10 @@ class MatchVC: UIViewController {
              
                 UIView.animate(withDuration: duracao) {
                     self.view.frame = CGRect(
-                        x: self.view.frame.origin.x,
-                        y: self.view.frame.origin.y,
-                        width: self.view.frame.width,
-                        height: self.view.frame.height - keyboardSyze.height
+                        x: UIScreen.main.bounds.origin.x,
+                        y: UIScreen.main.bounds.origin.y,
+                        width: UIScreen.main.bounds.width,
+                        height: UIScreen.main.bounds.height - keyboardSyze.height
                     )
                     self.view.layoutIfNeeded()
                 }

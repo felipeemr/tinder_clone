@@ -22,6 +22,7 @@
 		EDDD63C426DF0350006037A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C326DF0350006037A4 /* Usuario.swift */; };
 		EDDD63C926DF0A48006037A4 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C826DF0A47006037A4 /* UsuarioService.swift */; };
 		EDE66CAF26E83C9A002FA923 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE66CAE26E83C9A002FA923 /* Loading.swift */; };
+		EDE66CB126E84937002FA923 /* MatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE66CB026E84937002FA923 /* MatchVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EDDD63C326DF0350006037A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		EDDD63C826DF0A47006037A4 /* UsuarioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsuarioService.swift; path = ../../../../Downloads/UsuarioService.swift; sourceTree = "<group>"; };
 		EDE66CAE26E83C9A002FA923 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		EDE66CB026E84937002FA923 /* MatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				ED7DEFA326DDA4A100DAE6BF /* CombineVC.swift */,
+				EDE66CB026E84937002FA923 /* MatchVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				EDDD63C426DF0350006037A4 /* Usuario.swift in Sources */,
 				EDDD63C926DF0A48006037A4 /* UsuarioService.swift in Sources */,
 				ED7DEFA426DDA4A100DAE6BF /* CombineVC.swift in Sources */,
+				EDE66CB126E84937002FA923 /* MatchVC.swift in Sources */,
 				ED7DEF9326DDA43B00DAE6BF /* ViewController.swift in Sources */,
 				EDDD63C126DEF9E6006037A4 /* UILabel.swift in Sources */,
 				ED7DEFA726DDB68700DAE6BF /* CombineCardView.swift in Sources */,

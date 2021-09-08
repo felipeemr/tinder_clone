@@ -9,6 +9,14 @@ import UIKit
 
 class MatchVC: UIViewController {
     
+    var usuario: Usuario? {
+        didSet{
+            if let usuario = usuario {
+                fotoImageView.image = UIImage(named: usuario.foto)
+                mensagemLabel.text = "\(usuario.nome) curtiu você também! "
+            }
+        }
+    }
     let fotoImageView: UIImageView = .fotoImageView(named: "pessoa-1")
     let likeImageView: UIImageView = .fotoImageView(named: "icone-like")
     let mensagemLabel: UILabel = .textBolLabel(18, textColor: .white, numberOfLines: 1)
@@ -56,12 +64,22 @@ class MatchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         view.addSubview(fotoImageView)
         fotoImageView.preencherSuperview()
         
-        mensagemLabel.text = "Ana curtiu você também"
+        let gradient = CAGradientLayer()
+        gradient.frame = view.frame
+        gradient.colors = [UIColor.clear.cgColor, UIColor.clear.cgColor, UIColor.black.cgColor]
+        
+        fotoImageView.layer.addSublayer(gradient)
+        
+        
         mensagemLabel.textAlignment = .center
         
+        voltarButton.addTarget(self, action: #selector(voltarClique), for: .touchUpInside)
         likeImageView.translatesAutoresizingMaskIntoConstraints = false
         likeImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         likeImageView.contentMode = .scaleAspectFit
@@ -87,5 +105,41 @@ class MatchVC: UIViewController {
             bottom: view.bottomAnchor,
             padding: .init(top: 0, left: 32, bottom: 46, right: 32)
         )
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    @objc func voltarClique() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @objc func keyBoardShow (notification: NSNotification){
+        if let keyboardSyze = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if let duracao = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
+             
+                UIView.animate(withDuration: duracao) {
+                    self.view.frame = CGRect(
+                        x: self.view.frame.origin.x,
+                        y: self.view.frame.origin.y,
+                        width: self.view.frame.width,
+                        height: self.view.frame.height - keyboardSyze.height
+                    )
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
+    }
+    @objc func keyboardHide (notification: NSNotification){
+        if let duracao = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
+         
+            UIView.animate(withDuration: duracao) {
+                self.view.frame = UIScreen.main.bounds
+                self.view.layoutIfNeeded()
+        }
+        
+        }
     }
 }

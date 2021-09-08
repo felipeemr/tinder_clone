@@ -29,13 +29,25 @@ class CombineVC: UIViewController   {
         
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = UIColor.systemGroupedBackground
+        
+        let loading = Loading(frame: view.frame)
+        view.insertSubview(loading, at: 0)
+        
         self.adicionarFooter()
         self.buscaUsuarios()
         self.adicionaHeader()
     }
     func buscaUsuarios(){
-        self.usuarios = UsuarioService.shared.buscaUsuarios()
-        self.adicionarCards()
+//        self.usuarios = UsuarioService.shared.buscaUsuarios()
+//        self.adicionarCards()
+        UsuarioService.shared.buscaUsuarios{ (usuarios, err) in
+            if let usuarios = usuarios {
+                DispatchQueue.main.async {
+                    self.usuarios = usuarios
+                    self.adicionarCards()
+                }
+            }
+        }
     }
 }
 extension CombineVC{
@@ -95,7 +107,7 @@ extension CombineVC{
             
             card.addGestureRecognizer(gesture)
             
-            view.insertSubview(card, at: 0)
+            view.insertSubview(card, at: 1)
 
         }
     }

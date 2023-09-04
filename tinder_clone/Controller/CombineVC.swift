@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Acao {
+enum Action {
     case like
     case deslike
     case superlike
@@ -37,9 +37,7 @@ class CombineVC: UIViewController   {
         self.buscaUsuarios()
         self.adicionaHeader()
     }
-    func buscaUsuarios(){
-//        self.usuarios = UsuarioService.shared.buscaUsuarios()
-//        self.adicionarCards()
+    func buscaUsuarios() {
         UsuarioService.shared.buscaUsuarios{ (usuarios, err) in
             if let usuarios = usuarios {
                 DispatchQueue.main.async {
@@ -83,13 +81,13 @@ extension CombineVC{
             padding: .init(top: 0, left: 16, bottom: 34, right: 16)
         )
     
-        deslikeButton.addTarget(self, action: #selector(deslikeClique), for: .touchUpInside)
-        superlikeButton.addTarget(self, action: #selector(superlikeClique), for: .touchUpInside)
-        likeButton.addTarget(self, action: #selector(likeClique), for: .touchUpInside)
+        deslikeButton.addTarget(self, action: #selector(unlike), for: .touchUpInside)
+        superlikeButton.addTarget(self, action: #selector(superlikeClick), for: .touchUpInside)
+        likeButton.addTarget(self, action: #selector(likeClick), for: .touchUpInside)
     }
 }
 
-extension CombineVC{
+extension CombineVC {
     func adicionarCards() {
         
         for usuario in usuarios {
@@ -102,16 +100,19 @@ extension CombineVC{
             card.usuario = usuario
             card.tag = usuario.id
             
-        let gesture = UIPanGestureRecognizer()
+            card.callback = { data in
+                print("Callback")
+                self.visualizarDetalhe(usuario: data)
+            }
+            
+            let gesture = UIPanGestureRecognizer()
             gesture.addTarget(self, action: #selector(handlerCard))
             
             card.addGestureRecognizer(gesture)
-            
             view.insertSubview(card, at: 1)
-
         }
     }
-    func removerCard(card: UIView){
+    func removerCard(card: UIView) {
         card.removeFromSuperview()
         
         self.usuarios = self.usuarios.filter({(usuario)-> Bool in
@@ -128,6 +129,13 @@ extension CombineVC{
             
             self.present(matchVC, animated: true, completion: nil)
         }
+    }
+    func visualizarDetalhe( usuario: Usuario){
+        print(usuario)
+        let detalheVC = UIViewController()
+        detalheVC.view.backgroundColor = .red
+        detalheVC.modalPresentationStyle = .fullScreen
+        self.present(detalheVC, animated: true, completion: nil)
     }
 }
     extension CombineVC {
@@ -153,11 +161,11 @@ extension CombineVC{
                 if gesture.state == .ended{
                     
                     if card.center.x > self.view.bounds.width + 50 {
-                        self.animaCard(rotationAngle: rotationAngle, acao: .like)
+                        self.animaCard(rotationAngle: rotationAngle, action: .like)
                         return
                     }
                     if card.center.x < -50 {
-                        self.animaCard(rotationAngle: rotationAngle, acao: .deslike)
+                        self.animaCard(rotationAngle: rotationAngle, action: .deslike)
                         return
                     }
                     
@@ -172,16 +180,16 @@ extension CombineVC{
                 }
             }
     }
-        @objc func deslikeClique() {
-            self.animaCard(rotationAngle: -0.4, acao: .deslike)
+        @objc func unlike() {
+            self.animaCard(rotationAngle: -0.4, action: .deslike)
         }
-        @objc func likeClique() {
-            self.animaCard(rotationAngle: 0.4, acao: .like)
+        @objc func likeClick() {
+            self.animaCard(rotationAngle: 0.4, action: .like)
         }
-        @objc func superlikeClique(){
-            self.animaCard(rotationAngle: 0.4, acao: .superlike)
+        @objc func superlikeClick(){
+            self.animaCard(rotationAngle: 0.4, action: .superlike)
         }
-        func animaCard (rotationAngle: CGFloat, acao: Acao) {
+        func animaCard (rotationAngle: CGFloat, action: Action) {
             if let usuario = self.usuarios.first{
                 for view in self.view.subviews{
                     if view.tag == usuario.id{
@@ -189,7 +197,7 @@ extension CombineVC{
                             
                             let center: CGPoint
                             var like: Bool
-                            switch acao {
+                            switch action {
                             case .deslike:
                                 center = CGPoint(x: card.center.x - self.view.bounds.width, y: card.center.y + 50)
                                 like = false
@@ -201,10 +209,6 @@ extension CombineVC{
                                 like = true
                             
                             }
-//                            UIView.animate(withDuration: 0.2){
-//                                card.center = center
-//                                card.transform = CGAffineTransform(rotationAngle: rotationAngle)
-//                            }
                             UIView.animate(withDuration: 0.4, animations: {
                                 card.center = center
                                 card.transform = CGAffineTransform(rotationAngle: rotationAngle)

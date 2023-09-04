@@ -26,7 +26,7 @@ class MatchVC: UIViewController, UITextFieldDelegate {
        
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        textField.placeholder = "diga algol legal"
+        textField.placeholder = "diga algo legal"
         textField.backgroundColor =  .white
         textField.layer.cornerRadius = 8
         textField.textColor = .darkText
@@ -113,7 +113,6 @@ class MatchVC: UIViewController, UITextFieldDelegate {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.enviarMensagem()
-        
         return true
     }
     

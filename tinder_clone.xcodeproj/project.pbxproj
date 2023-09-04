@@ -16,13 +16,14 @@
 		ED7DEFA426DDA4A100DAE6BF /* CombineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA326DDA4A100DAE6BF /* CombineVC.swift */; };
 		ED7DEFA726DDB68700DAE6BF /* CombineCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA626DDB68700DAE6BF /* CombineCardView.swift */; };
 		ED7DEFAA26DDB97200DAE6BF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DEFA926DDB97200DAE6BF /* UIView.swift */; };
+		ED7E761E2A992AFE00A899B3 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7E761D2A992AFE00A899B3 /* DetailsVC.swift */; };
 		EDAD05C826E2ED85008BA650 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD05C726E2ED85008BA650 /* UIImageView.swift */; };
 		EDAD05CA26E2FCEB008BA650 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD05C926E2FCEB008BA650 /* UIButton.swift */; };
 		EDDD63C126DEF9E6006037A4 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C026DEF9E6006037A4 /* UILabel.swift */; };
 		EDDD63C426DF0350006037A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C326DF0350006037A4 /* Usuario.swift */; };
-		EDDD63C926DF0A48006037A4 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDD63C826DF0A47006037A4 /* UsuarioService.swift */; };
 		EDE66CAF26E83C9A002FA923 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE66CAE26E83C9A002FA923 /* Loading.swift */; };
 		EDE66CB126E84937002FA923 /* MatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE66CB026E84937002FA923 /* MatchVC.swift */; };
+		EDEAE1252A97C7D300B55F35 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEAE1242A97C7D300B55F35 /* UsuarioService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,13 +38,14 @@
 		ED7DEFA326DDA4A100DAE6BF /* CombineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineVC.swift; sourceTree = "<group>"; };
 		ED7DEFA626DDB68700DAE6BF /* CombineCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCardView.swift; sourceTree = "<group>"; };
 		ED7DEFA926DDB97200DAE6BF /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		ED7E761D2A992AFE00A899B3 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		EDAD05C726E2ED85008BA650 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		EDAD05C926E2FCEB008BA650 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		EDDD63C026DEF9E6006037A4 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		EDDD63C326DF0350006037A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
-		EDDD63C826DF0A47006037A4 /* UsuarioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsuarioService.swift; path = ../../../../Downloads/UsuarioService.swift; sourceTree = "<group>"; };
 		EDE66CAE26E83C9A002FA923 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		EDE66CB026E84937002FA923 /* MatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVC.swift; sourceTree = "<group>"; };
+		EDEAE1242A97C7D300B55F35 /* UsuarioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuarioService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				EDDD63C526DF081D006037A4 /* Service */,
-				EDDD63C226DF0325006037A4 /* Model */,
 				ED7DEFA826DDB95A00DAE6BF /* Lib */,
+				EDDD63C226DF0325006037A4 /* Model */,
 				ED7DEFA526DDB1E500DAE6BF /* View */,
 				ED7DEFA226DDA46600DAE6BF /* Controller */,
 				ED7DEF8E26DDA43B00DAE6BF /* AppDelegate.swift */,
@@ -97,6 +99,7 @@
 			children = (
 				ED7DEFA326DDA4A100DAE6BF /* CombineVC.swift */,
 				EDE66CB026E84937002FA923 /* MatchVC.swift */,
+				ED7E761D2A992AFE00A899B3 /* DetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,7 +135,7 @@
 		EDDD63C526DF081D006037A4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				EDDD63C826DF0A47006037A4 /* UsuarioService.swift */,
+				EDEAE1242A97C7D300B55F35 /* UsuarioService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -208,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDD63C426DF0350006037A4 /* Usuario.swift in Sources */,
-				EDDD63C926DF0A48006037A4 /* UsuarioService.swift in Sources */,
 				ED7DEFA426DDA4A100DAE6BF /* CombineVC.swift in Sources */,
 				EDE66CB126E84937002FA923 /* MatchVC.swift in Sources */,
 				ED7DEF9326DDA43B00DAE6BF /* ViewController.swift in Sources */,
@@ -219,6 +221,8 @@
 				EDAD05CA26E2FCEB008BA650 /* UIButton.swift in Sources */,
 				ED7DEFAA26DDB97200DAE6BF /* UIView.swift in Sources */,
 				EDE66CAF26E83C9A002FA923 /* Loading.swift in Sources */,
+				ED7E761E2A992AFE00A899B3 /* DetailsVC.swift in Sources */,
+				EDEAE1252A97C7D300B55F35 /* UsuarioService.swift in Sources */,
 				ED7DEF9126DDA43B00DAE6BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,7 @@ class CombineCardView: UIView {
     let idadeLabel:UILabel = .textLabel(28, textColor: .white)
     let fraseLabel:UILabel = .textLabel(16, textColor: .white, numberOfLines: 2)
     
+    var callback: ((Usuario) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,9 +79,18 @@ class CombineCardView: UIView {
                             trailing: trailingAnchor,
                             bottom: bottomAnchor,
                             padding: .init(top: 0, left: 16, bottom: 16, right: 16))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(visualizarClique))
+        stackView.isUserInteractionEnabled = true
+        stackView.addGestureRecognizer(tap)
     }
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    @objc func visualizarClique() {
+        
+        if let usuario = self.usuario {
+            self.callback?(usuario)
+        }
     }
 }

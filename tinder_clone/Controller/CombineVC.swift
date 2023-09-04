@@ -121,8 +121,6 @@ extension CombineVC {
     }
     func verificarMatch(usuario: Usuario){
         if usuario.match {
-            print("boa")
-            
             let matchVC = MatchVC()
             matchVC.usuario = usuario
             matchVC.modalPresentationStyle = .fullScreen
@@ -132,8 +130,7 @@ extension CombineVC {
     }
     func visualizarDetalhe( usuario: Usuario){
         print(usuario)
-        let detalheVC = UIViewController()
-        detalheVC.view.backgroundColor = .red
+        let detalheVC = DetailsVC()
         detalheVC.modalPresentationStyle = .fullScreen
         self.present(detalheVC, animated: true, completion: nil)
     }
